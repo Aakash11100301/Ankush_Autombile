@@ -33,5 +33,7 @@ import car32 from "./Toyota.jpg"
 import car33 from "./Volkswagen.jpg"
 import car34 from "./Volvo.jpg"
 import car35 from "./Ford.jpg"
+import toyota from "./image.jfif"
 
-export {car1,car2,car3,car4,car5,car6,car7,car8,car9,car10,car11,car12,car13,car14,car15,car16,car17,car18,car19,car20,car21,car22,car23,car24,car25,car26,car27,car28,car29,car30,car31,car32,car33,car34,car35}
+
+export {toyota,car32}

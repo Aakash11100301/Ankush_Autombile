@@ -11,6 +11,8 @@ import ComboPackagesPage from './pages/Packages/Packages.jsx'
 import LoginPage from './pages/Login/Login.jsx'
 import SignUppage from './pages/Login/SignUp.jsx'
 import ForgotPassword from './pages/Login/Forgot.jsx' 
+import ServiceSelection from './pages/Users/User.jsx' 
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +24,8 @@ const router = createBrowserRouter(
     <Route path='about' element={<AboutPage />}/> 
     <Route path='login' element={<LoginPage />}/> 
     <Route path='register' element={<SignUppage />}/>
-    <Route path='forgot-password' element={<ForgotPassword />}/> 
+    <Route path='forgot-password' element={<ForgotPassword />}/>
+    <Route path='user' element={<ServiceSelection/>}/>
     </Route>
   )
 )

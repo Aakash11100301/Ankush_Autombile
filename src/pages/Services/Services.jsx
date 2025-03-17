@@ -1,54 +1,55 @@
 import React from "react";
-import {car1,car2,car3,car4} from  '../../assets/index.assets.js'
+import { car32 } from '../../assets/index.assets.js';
+
 const services = [
   {
-    title: "Engine Diagnostics",
-    description: "Comprehensive engine performance checks and fault detection.",
+    title: "Toyota Engine Diagnostics",
+    description: "Comprehensive engine performance checks and fault detection for Toyota vehicles.",
     icon: "🔧",
     bgColor: "bg-blue-100",
-    image: car1,
+    image: car32,
   },
   {
-    title: "Oil Change",
-    description: "Complete oil and filter change to ensure smooth engine performance.",
+    title: "Toyota Oil Change",
+    description: "Complete oil and filter change to ensure smooth engine performance in Toyota cars.",
     icon: "🛢️",
     bgColor: "bg-green-100",
-    image: car2,
+    image: car32,
   },
   {
-    title: "Brake Repair",
-    description: "Inspection and replacement of brake pads, rotors, and fluids.",
+    title: "Toyota Brake Repair",
+    description: "Inspection and replacement of brake pads, rotors, and fluids for Toyota models.",
     icon: "🚗",
     bgColor: "bg-yellow-100",
-    image: car3,
+    image: car32,
   },
   {
-    title: "Tire Services",
-    description: "Tire rotation, balancing, and alignment for safety and longevity.",
+    title: "Toyota Tire Services",
+    description: "Tire rotation, balancing, and alignment for safety and longevity of Toyota vehicles.",
     icon: "🚀",
     bgColor: "bg-red-100",
-    image: car4,
+    image: car32,
   },
   {
-    title: "Battery Check",
-    description: "Testing and replacement of car batteries for reliable performance.",
+    title: "Toyota Battery Check",
+    description: "Testing and replacement of Toyota car batteries for reliable performance.",
     icon: "🔋",
     bgColor: "bg-purple-100",
-    image: car1,
+    image: car32,
   },
   {
-    title: "AC & Heating",
-    description: "Inspection and repair of car air conditioning and heating systems.",
+    title: "Toyota AC & Heating",
+    description: "Inspection and repair of Toyota air conditioning and heating systems.",
     icon: "❄️",
     bgColor: "bg-teal-100",
-    image: car3,
+    image: car32,
   },
 ];
 
 const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-6">
-      <h1 className="text-4xl font-extrabold text-center mb-10 text-gray-800">Our Car Services</h1>
+      <h1 className="text-4xl font-extrabold text-center mb-10 text-gray-800">Our Toyota Services</h1>
       <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <div

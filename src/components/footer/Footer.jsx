@@ -1,37 +1,74 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import React from "react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-6">
-        {/* Logo and Copyright */}
-        <div className="mb-6 md:mb-0 text-center md:text-left">
-          <h2 className="text-2xl font-bold">Brand</h2>
-          <p className="text-gray-400">&copy; {new Date().getFullYear()} Brand. All rights reserved.</p>
+    <footer className="bg-gray-100 text-gray-800 py-8">
+      <div className="container mx-auto px-4 text-center">
+        {/* Logo and Disclaimer */}
+        <div className="mb-6">
+          <img src="/toyota-logo.png" alt="Toyota Logo" className="mx-auto w-16 h-16" />
+          <p className="text-sm mt-2">
+            SP Automobiles Pvt. Ltd. reserves the right to change the colors, specifications, prices,
+            and models of vehicles without any notice. The shown pictures and features mentioned may not
+            be a part of standard equipment and could differ from variants. The actual color of the vehicle
+            and accessories might differ from the representations. Images are for illustration purposes only.
+          </p>
         </div>
 
-        {/* Get in Touch Section */}
-        <div className="text-center md:text-left">
-          <h3 className="text-lg font-semibold mb-2">Get in Touch</h3>
-          <p className="text-gray-400">123 Street, City, Country</p>
-          <p className="text-gray-400">Phone: +123 456 7890</p>
-          <p className="text-gray-400">Email: contact@brand.com</p>
+        {/* Footer Links */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left md:text-center">
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <ul className="mt-2 space-y-2">
+              <li><Link to="/" className="hover:underline">Home</Link></li>
+              <li><Link to="/about" className="hover:underline">About Us</Link></li>
+              <li><Link to="/services" className="hover:underline">Service</Link></li>
+              <li><Link to="/corporate-sales" className="hover:underline">Corporate Sales</Link></li>
+              <li><Link to="/disclaimer" className="hover:underline">Disclaimer</Link></li>
+            </ul>
+          </div>
+
+          {/* Models */}
+          <div>
+            <h3 className="font-semibold text-lg">Models</h3>
+            <ul className="mt-2 space-y-2">
+              <li>Toyota Glanza</li>
+              <li>Toyota Fortuner</li>
+              <li>Toyota Hilux</li>
+              <li>Toyota Innova Crysta</li>
+              <li>Toyota Camry</li>
+              <li>Toyota Vellfire</li>
+              <li>Toyota Urban Cruiser Hyryder</li>
+              <li>Toyota Innova Hycross</li>
+              <li>Toyota Rumion</li>
+            </ul>
+          </div>
+
+          {/* Dealer Locations */}
+          <div>
+            <h3 className="font-semibold text-lg">Dealer Location</h3>
+            <ul className="mt-2 space-y-2">
+              <li>Toyota Karnal</li>
+              <li>Toyota Chandigarh</li>
+              <li>Toyota Ambala</li>
+              <li>Toyota Panipat</li>
+              <li>Toyota Yamunanagar</li>
+              <li>Toyota Kaithal</li>
+              <li>Toyota Jind</li>
+              <li>Toyota Sangrur</li>
+              <li>Toyota Ludhiana</li>
+              <li>Toyota Kurukshetra</li>
+              <li>Toyota Mohali</li>
+              <li>Toyota Assandh</li>
+            </ul>
+          </div>
         </div>
 
-        {/* Social Media Links */}
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#" className="text-gray-400 hover:text-white">
-            <FaFacebook size={24} />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
-            <FaTwitter size={24} />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
-            <FaInstagram size={24} />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white">
-            <FaLinkedin size={24} />
-          </a>
+        {/* Copyright */}
+        <div className="mt-6 text-sm text-gray-500">
+          © 2025 SP Automobiles Pvt. Ltd. | All Rights Reserved
         </div>
       </div>
     </footer>
