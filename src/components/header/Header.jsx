@@ -32,8 +32,8 @@ const Header = () => {
       <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
         {/* Logo & Company Name */}
         <Link to="/" className="flex items-center">
-          <img src={toyota} alt="Toyota Logo" className="w-13 h-10" />
-          <span className="ml-2 text-xl font-bold text-blue">Toyota Service Center</span>
+        <img src={toyota} alt="Toyota Logo" className="w-16 h-16" />  {/* Increased size */}
+        <span className="ml-3 text-2xl font-bold text-yellow-400">Toyota Service Center</span> {/* Changed text color */}
         </Link>
 
         {/* Navigation Links */}
