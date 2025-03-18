@@ -18,7 +18,7 @@ import car4 from './toyota4.png'
 import car5 from './toyota5.png'
 import car6 from './toyota6.png'
 import toyotaLogo from './toyota7.png'
-import toyotaallcars from './ToyotaAllCars.webp'
+import toyotaallcars from './toyotaAllCars.webp'
 import rumion from './rumion.webp'
 
 export { logo, car1, car2, car3, car4, car5, car6, toyotaLogo, toyotaallcars, rumion}
