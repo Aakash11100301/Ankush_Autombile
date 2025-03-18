@@ -20,6 +20,9 @@ import car6 from './toyota6.png'
 import toyotaLogo from './toyota7.png'
 import toyotaallcars from './ToyotaAllCars.webp'
 import rumion from './rumion.webp'
+import corollaaltis from './corollaaltis.jpg'
+import etios from './etios.jpg'
+import yaris from './yaris.jpg'
 
-export { logo, car1, car2, car3, car4, car5, car6, toyotaLogo, toyotaallcars, rumion}
+export { logo, car1, car2, car3, car4, car5, car6, toyotaLogo, toyotaallcars, rumion, landcruiser,corollaaltis,etios,yaris}
 export {toyota,car32,camry,fortuner,glanza,hilux,innovahycross,innovacrysta,landcruiser,urbanch,urbanct,vellfire}

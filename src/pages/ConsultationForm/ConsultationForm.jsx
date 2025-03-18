@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
 function ConsultationForm({ selectedCar }) {
   if (!selectedCar) {
@@ -6,139 +6,225 @@ function ConsultationForm({ selectedCar }) {
   }
 
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+    message: "",
     agree: false,
   });
 
   const [errors, setErrors] = useState({});
+  const [isFormValid, setIsFormValid] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false); // ✅ Success popup state
 
-  const validateForm = () => {
-    let newErrors = {};
+  // Function to validate input fields
+  const validateField = (name, value) => {
+    let error = "";
 
-    // Name Validation: No numbers allowed
-    if (!formData.name.trim()) {
-      newErrors.name = "Name is required.";
-    } else if (/\d/.test(formData.name)) {
-      newErrors.name = "Name should not contain numbers.";
+    if (name === "name") {
+      if (!value.trim()) {
+        error = "Name is required.";
+      } else if (/\d/.test(value)) {
+        error = "Name should not contain numbers.";
+      }
     }
 
-    // Phone Number Validation: Only digits, exactly 10 digits
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required.";
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      newErrors.phone = "Phone number must be exactly 10 digits.";
+    if (name === "phone") {
+      if (!value.trim()) {
+        error = "Phone number is required.";
+      } else if (!/^\d{10}$/.test(value)) {
+        error = "Phone number must be exactly 10 digits.";
+      }
     }
 
-    // Email Validation: Must contain '@'
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else if (!formData.email.includes("@")) {
-      newErrors.email = "Invalid email. Must contain '@'.";
+    if (name === "email") {
+      if (!value.trim()) {
+        error = "Email is required.";
+      } else if (!value.includes("@")) {
+        error = "Invalid email. Must contain '@'.";
+      }
     }
 
-    // Message Validation: Cannot be empty
-    if (!formData.message.trim()) {
-      newErrors.message = "Message cannot be empty.";
+    if (name === "message") {
+      if (!value.trim()) {
+        error = "Message cannot be empty.";
+      }
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: error,
+    }));
   };
 
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+
+    if (errors[name]) {
+      validateField(name, value);
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    validateField(name, value);
+  };
+
+  // Check form validity whenever formData or errors change
+  useEffect(() => {
+    const hasErrors = Object.values(errors).some((error) => error !== "");
+    const hasEmptyFields = Object.entries(formData).some(
+      ([key, value]) => key !== "address" && key !== "agree" && !value.trim()
+    );
+
+    setIsFormValid(!hasErrors && !hasEmptyFields);
+  }, [formData, errors]);
+
+  // ✅ Handle Form Submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
-      alert("Form submitted successfully!");
-      // Here, you can add the logic to send the data to a server
-    }
+
+    if (!isFormValid) return;
+
+    // Simulating API call delay with setTimeout
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        address: "",
+        message: "",
+        agree: false,
+      });
+    }, 500);
   };
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
-      <p className="text-lg font-bold text-gray-700">{`Enquiring about: ${selectedCar.name}`}</p>
+    <div>
+      {/* ✅ Success Popup */}
+      {isSubmitted && (
+        <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <h2 className="text-green-600 text-lg font-bold">Query Sent Successfully!</h2>
+            <p className="text-gray-700">The service station will reach back to you shortly.</p>
+            <button
+              className="mt-4 px-4 py-2 bg-green-600 text-white rounded"
+              onClick={() => setIsSubmitted(false)}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
 
-      {/* Name Input */}
-      <label className="block">
-        Your Name
-        <input
-          type="text"
-          className="w-full p-2 border rounded"
-          placeholder="Enter your name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-        />
-        {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
-      </label>
+      {/* ✅ Consultation Form */}
+      <form className="space-y-4" onSubmit={handleSubmit}>
+        <p className="text-lg font-bold text-gray-700">
+          {`Enquiring about: ${selectedCar.name}`}
+        </p>
 
-      {/* Phone Number Input */}
-      <label className="block">
-        Phone Number
-        <input
-          type="text"
-          className="w-full p-2 border rounded"
-          placeholder="Enter your phone number"
-          value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-        />
-        {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
-      </label>
+        {/* Name Input */}
+        <label className="block">
+          Your Name
+          <input
+            type="text"
+            name="name"
+            className="w-full p-2 border rounded"
+            placeholder="Enter your name"
+            value={formData.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+        </label>
 
-      {/* Email Input */}
-      <label className="block">
-        Your Email
-        <input
-          type="email"
-          className="w-full p-2 border rounded"
-          placeholder="Enter your email"
-          value={formData.email}
-          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-        />
-        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
-      </label>
+        {/* Phone Number Input */}
+        <label className="block">
+          Phone Number
+          <input
+            type="text"
+            name="phone"
+            className="w-full p-2 border rounded"
+            placeholder="Enter your phone number"
+            value={formData.phone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
+        </label>
 
-      {/* Address Input */}
-      <label className="block">
-        Your Address
-        <input
-          type="text"
-          className="w-full p-2 border rounded"
-          placeholder="Enter your address"
-          value={formData.address}
-          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-        />
-      </label>
+        {/* Email Input */}
+        <label className="block">
+          Your Email
+          <input
+            type="email"
+            name="email"
+            className="w-full p-2 border rounded"
+            placeholder="Enter your email"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+        </label>
 
-      {/* Checkbox */}
-      <label className="flex items-center">
-        <input
-          type="checkbox"
-          className="mr-2"
-          checked={formData.agree}
-          onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
-        />
-        I hereby agree to receive notifications.
-      </label>
+        {/* Address Input (Optional) */}
+        <label className="block">
+          Your Address
+          <input
+            type="text"
+            name="address"
+            className="w-full p-2 border rounded"
+            placeholder="Enter your address"
+            value={formData.address}
+            onChange={handleChange}
+          />
+        </label>
 
-      {/* Message Input */}
-      <label className="block">
-        Your Message
-        <textarea
-          className="w-full p-2 border rounded"
-          placeholder="Enter your message..."
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-        />
-        {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
-      </label>
+        {/* Checkbox */}
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            name="agree"
+            className="mr-2"
+            checked={formData.agree}
+            onChange={handleChange}
+          />
+          I hereby agree to receive notifications.
+        </label>
 
-      <button type="submit" className="w-full bg-red-600 text-white p-2 rounded">
-        Submit
-      </button>
-    </form>
+        {/* Message Input */}
+        <label className="block">
+          Your Message
+          <textarea
+            name="message"
+            className="w-full p-2 border rounded"
+            placeholder="Enter your message..."
+            value={formData.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+          {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+        </label>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className={`w-full p-2 rounded text-white ${
+            isFormValid ? "bg-red-600 hover:bg-red-700" : "bg-gray-400 cursor-not-allowed"
+          }`}
+          disabled={!isFormValid}
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 }
 
