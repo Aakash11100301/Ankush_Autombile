@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ConsultationForm from "./ConsultationForm";
 import { 
   toyotaallcars, glanza, camry, fortuner, hilux, 
-  innovacrysta, innovahycross, vellfire, urbanch, urbanct, rumion, landcruiser
+  innovacrysta, innovahycross, vellfire, urbanch, urbanct, rumion, landcruiser, yaris, etios, corollaaltis
 } from '../../assets/index.assets.js';
 
 const cars = [
@@ -13,6 +13,22 @@ const cars = [
           "The Toyota Camry offers a perfect blend of luxury, efficiency, and high performance. Its hybrid technology, plush interiors, and advanced safety features make every drive smooth and refined.",
         fullImage: toyotaallcars,
         smallImage: camry,
+    },
+    {
+      name: "Toyota Corolla Altis",
+      tagline: "Elevate Your Drive with Power and Prestige.",
+      description:
+        "The Toyota Corolla Altis is a symbol of sophistication, blending premium comfort with dynamic performance. With its sleek design, spacious interiors, and advanced safety features, it offers a smooth and luxurious driving experience. Whether in the city or on the highway, the Corolla Altis delivers reliability, efficiency, and elegance in every ride.",
+      fullImage: toyotaallcars,
+      smallImage: corollaaltis,
+    },
+    {
+      name: "Toyota Etios",
+      tagline: "Built to Last, Designed for Comfort.",
+      description:
+          "The Toyota Etios is a reliable and fuel-efficient sedan, offering a perfect blend of comfort, performance, and durability. With its spacious interiors, powerful yet economical engine, and Toyota’s legendary reliability, the Etios is an ideal choice for both city commutes and long highway drives. Whether for personal use or commercial purposes, the Etios delivers a smooth and hassle-free driving experience.",
+      fullImage: toyotaallcars,
+      smallImage: etios,
     },
     {
         name: "Toyota Fortuner",
@@ -63,12 +79,28 @@ const cars = [
         smallImage: rumion,
     },
     {
+      name: "Toyota Land Cruiser 300",
+      tagline: "Unmatched Power, Ultimate Prestige.",
+      description:
+          "The Toyota Land Cruiser 300 is a legendary SUV known for its rugged capability, luxurious comfort, and advanced technology. With a powerful twin-turbo V6 engine, superior off-road performance, and a refined interior, it sets the benchmark for full-size SUVs.",
+      fullImage: toyotaallcars,
+      smallImage: landcruiser,
+    },
+    {
         name: "Toyota Vellfire",
         tagline: "Luxury, Redefined.",
         description:
             "The Toyota Vellfire is a high-end luxury MPV that provides first-class comfort, a powerful hybrid engine, and ultra-premium interiors for an unmatched driving experience.",
         fullImage: toyotaallcars,
         smallImage: vellfire,
+    },
+    {
+      name: "Toyota Yaris",
+      tagline: "Drive in Style, Arrive with Confidence.",
+      description:
+          "The Toyota Yaris is a premium sedan that combines elegance, efficiency, and advanced safety features. Designed for urban and highway driving, it offers a refined driving experience with its smooth performance, spacious interiors, and cutting-edge technology. With Toyota’s legendary reliability and fuel efficiency, the Yaris ensures every journey is comfortable, safe, and stylish.",
+      fullImage: toyotaallcars,
+      smallImage: yaris,
     },
     {
         name: "Urban Cruiser Hyryder",
@@ -86,14 +118,6 @@ const cars = [
         fullImage: toyotaallcars,
         smallImage: urbanct,
     },
-    {
-      name: "Toyota Land Cruiser 300",
-      tagline: "Unmatched Power, Ultimate Prestige.",
-      description:
-          "The Toyota Land Cruiser 300 is a legendary SUV known for its rugged capability, luxurious comfort, and advanced technology. With a powerful twin-turbo V6 engine, superior off-road performance, and a refined interior, it sets the benchmark for full-size SUVs.",
-      fullImage: toyotaallcars,
-      smallImage: landcruiser,
-  },
 ];
 
 function ConsultationPage() {
