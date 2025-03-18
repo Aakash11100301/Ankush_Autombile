@@ -29,15 +29,6 @@ function ConsultationForm({ selectedCar }) {
         <input type="text" className="w-full p-2 border rounded" placeholder="Enter your address" />
       </label>
 
-      <label className="block">
-        Select Dealer
-        <select className="w-full p-2 border rounded">
-          <option>Select Your Dealer</option>
-          <option>Dealer 1</option>
-          <option>Dealer 2</option>
-        </select>
-      </label>
-
       <label className="flex items-center">
         <input type="checkbox" className="mr-2" />
         I hereby agree to receive notifications.

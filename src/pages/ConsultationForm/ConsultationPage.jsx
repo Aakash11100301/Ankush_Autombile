@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ConsultationForm from "./ConsultationForm";
 import { 
   toyotaallcars, glanza, camry, fortuner, hilux, 
-  innovacrysta, innovahycross, vellfire, urbanch, urbanct, car4 
+  innovacrysta, innovahycross, vellfire, urbanch, urbanct, rumion, landcruiser
 } from '../../assets/index.assets.js';
 
 const cars = [
@@ -60,7 +60,7 @@ const cars = [
         description:
             "The Toyota Innova Rumion offers best-in-class comfort, a powerful yet fuel-efficient engine, and premium features, making it the perfect family MPV.",
         fullImage: toyotaallcars,
-        smallImage: car4,
+        smallImage: rumion,
     },
     {
         name: "Toyota Vellfire",
@@ -86,6 +86,14 @@ const cars = [
         fullImage: toyotaallcars,
         smallImage: urbanct,
     },
+    {
+      name: "Toyota Land Cruiser 300",
+      tagline: "Unmatched Power, Ultimate Prestige.",
+      description:
+          "The Toyota Land Cruiser 300 is a legendary SUV known for its rugged capability, luxurious comfort, and advanced technology. With a powerful twin-turbo V6 engine, superior off-road performance, and a refined interior, it sets the benchmark for full-size SUVs.",
+      fullImage: toyotaallcars,
+      smallImage: landcruiser,
+  },
 ];
 
 function ConsultationPage() {
@@ -94,13 +102,10 @@ function ConsultationPage() {
   return (
     <div className="w-full">
       {/* Full-Screen Background Image */}
-      <div className="w-full h-screen relative">
-        <img
-          src={selectedCar.fullImage}
-          alt={selectedCar.name}
-          className="w-full h-full object-cover object-center absolute top-0 left-0"
-        />
-      </div>
+      <div 
+        className="w-full h-screen bg-cover bg-no-repeat bg-top relative"
+        style={{ backgroundImage: `url(${selectedCar.fullImage})` }}
+      />
 
       {/* Below Image: Form on Left, Car Image + Details on Right */}
       <div className="flex flex-col md:flex-row justify-center items-start px-12 py-8">
