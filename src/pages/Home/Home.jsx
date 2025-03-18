@@ -6,14 +6,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { car1, car2, car3, car4, car5, car6, toyotaallcars } from '../../assets/index.assets.js';
-import './home.css'
 import { Link } from "react-router-dom";
+import './home.css';
 
 const Home = () => {
   const cars = [toyotaallcars, car1, car2, car3, car4, car5, car6];
 
   return (
-    <div className="relative h-screen w-full bg-gray-900 flex items-center justify-center">
+    <div className="relative w-full bg-gray-900 flex items-center justify-center overflow-hidden">
       {/* Slider Container */}
       <div className="w-full max-w-7xl mx-auto px-4">
         <Swiper
@@ -33,19 +33,19 @@ const Home = () => {
             bulletClass: 'bullet',
             bulletActiveClass: 'bullet-active',
           }}
-          spaceBetween={30}
+          spaceBetween={0} 
           slidesPerView={1}
           centeredSlides={true}
-          className="h-[600px] w-full"
+          className="h-[calc(100vh-80px)] w-full" // Adjust height based on header size
         >
           {cars.map((car, index) => (
             <SwiperSlide key={index}>
-              <div className="h-full w-full bg-gray-800 rounded-xl p-4 shadow-2xl">
+              <div className="h-full w-full bg-gray-800 rounded-xl shadow-2xl">
                 <div className="h-full w-full flex items-center justify-center bg-gray-900 rounded-lg">
                   <img 
                     src={car} 
                     alt={`Auto Repair Example ${index + 1}`}
-                    className="h-full w-full object-contain p-8"
+                    className="h-full w-full object-cover"
                   />
                 </div>
               </div>
@@ -69,19 +69,19 @@ const Home = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-10 px-4">
         <div className="max-w-4xl">
           <h1 className="text-5xl font-bold mb-6 text-white text-outline">
-          Restore Your Ride to Perfection
+            Restore Your Ride to Perfection
           </h1>
-            <p className="text-xl md:text-2xl text-white mb-8 font-light text-outline">
+          <p className="text-xl md:text-2xl text-white mb-8 font-light text-outline">
             Premium dent removal, precision paint correction, and expert auto restoration.
-            </p>
-            <Link to="/consultation">
-              <button className="bg-red-500 text-white px-6 py-3 rounded-md">
-                Book Your Consultation
-              </button>
-            </Link>
-          </div>
+          </p>
+          <Link to="/consultation">
+            <button className="bg-red-500 text-white px-6 py-3 rounded-md">
+              Book Your Consultation
+            </button>
+          </Link>
         </div>
       </div>
+    </div>
   );
 };
 
