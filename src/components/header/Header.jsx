@@ -1,24 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { toyota} from "../../assets/index.assets.js";
-import { car32} from "../../assets/index.assets.js";
+import { toyota } from "../../assets/index.assets.js";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedModel, setSelectedModel] = useState("All models");
-  
-  const toggleMenu = () => setIsOpen(!isOpen);
-  
-  const models = [
-    "All models",
-    "Toyota Glanza",
-    "Toyota Fortuner",
-    "Toyota Camry",
-    "Urban Cruiser Hyryder",
-    "Innova Hycross"
-  ];
-
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Offers", path: "/offers" },
@@ -28,13 +12,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-yellow-900 border-b border-gray-700 w-full fixed top-0 left-0 z-50 shadow-lg">
-      <nav className="container mx-auto px-4 lg:px-8 flex items-center justify-between h-16">
-        {/* Logo & Company Name */}
-        <Link to="/" className="flex items-center">
-        <img src={toyota} alt="Toyota Logo" className="w-16 h-16" />  {/* Increased size */}
-        <span className="ml-3 text-2xl font-bold text-yellow-400">Toyota Service Center</span> {/* Changed text color */}
-        </Link>
+    <header className="bg-white border-b border-gray-300 w-full fixed top-0 left-0 z-50 shadow-lg h-20 flex items-center">
+      <nav className="w-full px-4 lg:px-8 flex items-center justify-between h-full">
+        
+        {/* Logo - Fully Left Aligned */}
+        <div className="flex items-center h-full pl-2">
+          <img src={toyota} alt="Toyota Logo" className="h-full object-cover" />
+        </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-8 items-center">
@@ -42,23 +26,12 @@ const Header = () => {
             <Link
               key={link.name}
               to={link.path}
-              className="text-gray-300 hover:text-white transition-colors duration-200 text-sm font-medium"
+              className="text-black hover:text-gray-700 transition-colors duration-200 text-lg font-medium"
             >
               {link.name}
             </Link>
           ))}
         </div>
-
-        {/* Toyota Model Selector */}
-        <select
-          className="bg-gray-800 text-white px-4 py-2 rounded-md focus:outline-none"
-          value={selectedModel}
-          onChange={(e) => setSelectedModel(e.target.value)}
-        >
-          {models.map((model, index) => (
-            <option key={index} value={model}>{model}</option>
-          ))}
-        </select>
       </nav>
     </header>
   );

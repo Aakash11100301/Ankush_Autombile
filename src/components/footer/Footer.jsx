@@ -50,18 +50,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg">Dealer Location</h3>
             <ul className="mt-2 space-y-2">
-              <li>Toyota Karnal</li>
-              <li>Toyota Chandigarh</li>
-              <li>Toyota Ambala</li>
-              <li>Toyota Panipat</li>
-              <li>Toyota Yamunanagar</li>
-              <li>Toyota Kaithal</li>
-              <li>Toyota Jind</li>
-              <li>Toyota Sangrur</li>
-              <li>Toyota Ludhiana</li>
-              <li>Toyota Kurukshetra</li>
-              <li>Toyota Mohali</li>
-              <li>Toyota Assandh</li>
+              <li>Toyota Mansa</li>
             </ul>
           </div>
         </div>
