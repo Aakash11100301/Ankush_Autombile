@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { toyota} from "../../assets/index.assets.js";
-import { car32} from "../../assets/index.assets.js";
+// import { toyota} from "../../assets/index.assets.js";
+// import { car32} from "../../assets/index.assets.js";
+import { toyota, car32, camry, fortuner, glanza, hilux, innovahycross, innovacrysta, landcruiser, urbanch, urbanct, vellfire } from "../../assets/index.assets.js";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

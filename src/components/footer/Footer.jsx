@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toyota, car32, camry, fortuner, glanza, hilux, innovahycross, innovacrysta, landcruiser, urbanch, urbanct, vellfire } from "../../assets/index.assets.js";
 
 const Footer = () => {
   return (
@@ -7,7 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 text-center">
         {/* Logo and Disclaimer */}
         <div className="mb-6">
-          <img src="/toyota-logo.png" alt="Toyota Logo" className="mx-auto w-16 h-16" />
+          <img src={toyota} alt="Toyota Logo" className="mx-auto w-16 h-16" />
+          
           <p className="text-sm mt-2">
             SP Automobiles Pvt. Ltd. reserves the right to change the colors, specifications, prices,
             and models of vehicles without any notice. The shown pictures and features mentioned may not
