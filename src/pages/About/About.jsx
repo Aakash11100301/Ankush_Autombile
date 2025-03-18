@@ -6,12 +6,26 @@ const AboutPage = () => {
     <div className="min-h-screen bg-gray-100 py-16 px-8 flex flex-col items-center">
       {/* Title Section */}
       <h1 className="text-5xl font-extrabold text-gray-900 text-center mb-6">About Us</h1>
-      <p className="max-w-5xl text-lg text-gray-700 text-center mb-12 leading-relaxed">
-        Welcome to <span className="font-semibold text-red-600">SP Automobiles</span>, your trusted car service provider! 
-        We specialize in **instant car repair services**, ensuring your vehicle gets the best care within minutes. 
-        Our team of highly trained professionals is committed to delivering **quality, integrity, and customer satisfaction**.
+      
+      {/* Description Section */}
+      <p className="max-w-5xl text-lg text-gray-700 text-center mb-8 leading-relaxed">
+        At <span className="font-semibold text-red-600">SP Automobiles</span>, we are committed to keeping your vehicle in top shape with **instant, reliable, and professional car repair services**. 
+        Our expert mechanics are just a call away, ensuring **on-the-spot assistance within 10-15 minutes** to get you back on the road quickly and safely.
       </p>
-
+      
+      <p className="max-w-5xl text-lg text-gray-700 text-center mb-8 leading-relaxed">
+        As **India’s leading multi-brand car service provider**, we offer a comprehensive range of **world-class vehicle maintenance and repair services** for all makes and models. 
+        Driven by **technology and customer satisfaction**, we prioritize **quality, integrity, and affordability** in everything we do.
+      </p>
+      
+      <p className="max-w-5xl text-lg text-gray-700 text-center mb-8 leading-relaxed italic font-semibold text-gray-900">
+        “To provide car care services that keep vehicles fit and customers happy.”
+      </p>
+      
+      <p className="max-w-5xl text-lg text-gray-700 text-center mb-12 leading-relaxed">
+        With **state-of-the-art service stations** and a team of **highly trained professionals**, we deliver **top-notch repairs, routine maintenance, and cost-effective service packages**—helping you save while ensuring a smooth driving experience.
+      </p>
+      
       {/* Contact Details Section */}
       <div className="grid md:grid-cols-4 gap-8 max-w-7xl w-full mb-16">
         {/* Address */}
