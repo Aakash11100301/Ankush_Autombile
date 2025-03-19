@@ -23,5 +23,12 @@ import rumion from './rumion.webp'
 import corollaaltis from './corollaaltis.jpg'
 import etios from './etios.jpg'
 import yaris from './yaris.jpg'
+import breakrepair from './breaksrepair.jpg'
+import diagnosis from './diagnosis.jpg'
+import oilchange from './oilchange.jpg'
+import tyre from './tyre.jpg'
+import battery from './battery.jpg'
+import acrepair from './acrepair.jpg'
+import dentpaint from './dentpaint.jpg'
 
-export { logo, car1, car2, car3, car4, car5, car6, toyotaLogo, toyotaallcars, rumion, landcruiser,corollaaltis,etios,yaris, toyota,car32,camry,fortuner,glanza,hilux,innovahycross,innovacrysta,urbanch,urbanct,vellfire}
+export { logo, car1, car2, car3, car4, car5, car6, toyotaLogo, toyotaallcars, rumion, landcruiser,corollaaltis,etios,yaris, toyota,car32,camry,fortuner,glanza,hilux,innovahycross,innovacrysta,urbanch,urbanct,vellfire, breakrepair, diagnosis, oilchange, tyre, battery, acrepair, dentpaint}
