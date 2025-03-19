@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ConsultationForm from "./ConsultationForm";
-import { 
-  toyotaallcars, glanza, camry, fortuner, hilux, 
+import {
+  toyotaallcars, glanza, camry, fortuner, hilux,
   innovacrysta, innovahycross, vellfire, urbanch, urbanct, rumion, landcruiser, yaris, etios, corollaaltis
 } from '../../assets/index.assets.js';
-
+ 
 const cars = [
     {
         name: "Toyota Camry",
@@ -119,24 +119,24 @@ const cars = [
         smallImage: urbanct,
     },
 ];
-
+ 
 function ConsultationPage() {
   const [selectedCar, setSelectedCar] = useState(cars[0]);
-
+ 
   return (
     <div className="w-full">
       {/* Full-Screen Background Image */}
-      <div 
+      <div
         className="w-full h-screen bg-cover bg-no-repeat bg-top relative"
         style={{ backgroundImage: `url(${selectedCar.fullImage})` }}
       />
-
+ 
       {/* Below Image: Form on Left, Car Image + Details on Right */}
       <div className="flex flex-col md:flex-row justify-center items-start px-12 py-8">
         {/* Left Side: Consultation Form */}
         <div className="bg-gray-300 p-6 rounded-lg shadow-md w-full md:w-5/12 transform -translate-x-6">
           <h2 className="text-red-600 text-xl font-bold text-center mb-4">Enquire Now!</h2>
-
+ 
           {/* Dropdown to select a Toyota Car */}
           <div className="mb-4">
             <label className="block text-gray-700 font-medium mb-1">Select Your Toyota Car:</label>
@@ -154,10 +154,10 @@ function ConsultationPage() {
               ))}
             </select>
           </div>
-
+ 
           <ConsultationForm selectedCar={selectedCar} />
         </div>
-
+ 
         {/* Right Side: Car Image + Details */}
         <div className="md:w-5/12 flex flex-col items-center text-center px-6 py-4 transform translate-x-6">
           <img
@@ -173,5 +173,5 @@ function ConsultationPage() {
     </div>
   );
 }
-
+ 
 export default ConsultationPage;
