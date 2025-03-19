@@ -38,12 +38,18 @@ const Footer = () => {
               <li>Toyota Glanza</li>
               <li>Toyota Fortuner</li>
               <li>Toyota Hilux</li>
-              <li>Toyota Innova Crysta</li>
+              <li>Toyota Innova</li>
               <li>Toyota Camry</li>
               <li>Toyota Vellfire</li>
               <li>Toyota Urban Cruiser Hyryder</li>
-              <li>Toyota Innova Hycross</li>
               <li>Toyota Rumion</li>
+              <li>Toyota Camry</li>
+              <li>Toyota Corolla Altis</li>
+              <li>Toyota Etios</li>
+              <li>Toyota Land Cruiser</li>
+              <li>Toyota Urban Cruiser Taisor</li>
+              <li>Toyota Vellfire</li>
+              <li>Toyota Yaris</li>
             </ul>
           </div>
 
@@ -58,7 +64,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-6 text-sm text-gray-500">
-          © 2025 SP Automobiles Pvt. Ltd. | All Rights Reserved
+          © 2025 SP Automobiles Pvt. Ltd. | All Rights Reserved | Designed By AAP Technologies Pvt. Ltd.
         </div>
       </div>
     </footer>
